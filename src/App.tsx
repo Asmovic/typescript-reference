@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Authentication from './components/Authentication';
 import Counter from './components/Counter';
 import EmployeeClassComponent from './components/EmployeeClassComponent';
 import EmployeeComponent from './components/EmployeeFnComponent';
@@ -40,6 +41,11 @@ function App() {
           <div className="row">
             <div className="col">
               <LoginForm />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <Authentication />
             </div>
           </div>
         </div>
