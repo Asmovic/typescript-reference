@@ -1,5 +1,7 @@
 import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css';
+import About from './components/About';
 import Authentication from './components/Authentication';
 import Counter from './components/Counter';
 import EmployeeClassComponent from './components/EmployeeClassComponent';
@@ -7,11 +9,27 @@ import EmployeeComponent from './components/EmployeeFnComponent';
 import FetchUser from './components/FetchUser';
 import Greetings from './components/Greetings';
 import LoginForm from './components/LoginForm';
+import Navbar from './components/Navbar';
+import UserDetails from './components/UserDetails';
 import UserList from './components/UserList';
 
 function App() {
   return (
     <React.Fragment>
+      <Navbar />
+      <Routes>
+        <Route path={'/'} element={<Navigate to={'/contacts/list'} />} />
+        <Route path={'/contacts/list'} element={<FetchUser />} />
+        <Route path={'/contacts/:id'} element={<UserDetails />} />
+        <Route path={'/about'} element={<About />} />
+      </Routes>
+    </React.Fragment>
+  );
+}
+
+export default App;
+
+{/* <React.Fragment>
       <div className="container mt-3">
         <div className="grid">
           <div className="row">
@@ -62,8 +80,4 @@ function App() {
           </div>
         </div>
       </div>
-    </React.Fragment>
-  );
-}
-
-export default App;
+    </React.Fragment> */}
