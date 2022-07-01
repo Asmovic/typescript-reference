@@ -4,6 +4,7 @@ import Authentication from './components/Authentication';
 import Counter from './components/Counter';
 import EmployeeClassComponent from './components/EmployeeClassComponent';
 import EmployeeComponent from './components/EmployeeFnComponent';
+import FetchUser from './components/FetchUser';
 import Greetings from './components/Greetings';
 import LoginForm from './components/LoginForm';
 import UserList from './components/UserList';
@@ -52,6 +53,11 @@ function App() {
           <div className="row">
             <div className="col">
               <UserList />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <FetchUser />
             </div>
           </div>
         </div>
