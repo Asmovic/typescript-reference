@@ -15,13 +15,20 @@ let LoginForm:FC<IProps> = () => {
     });
     let handleChange = (event:React.ChangeEvent<HTMLInputElement>):void => {
         let { name, value } = event.target;
-        setState({nuser: {
+        setState({ user: {
+            ...state.user,
             [name]: value
         }})
+    };
+
+    let login = (event:React.FormEvent<HTMLFormElement>):void => {
+        event.preventDefault();
+        console.log(state.user);
+
     }
     return (
         <React.Fragment>
-            <div className="container">
+            <div className="container mt-4">
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card">
@@ -29,12 +36,12 @@ let LoginForm:FC<IProps> = () => {
                                 <p className="h4">Login Here</p>
                             </div>
                             <div className="card-body">
-                                <form>
+                                <form onSubmit={login}>
                                     <div className="mb-2">
-                                        <input type="text" name="username" className="form-control" placeholder="Username" />
+                                        <input type="text" onChange={(ev)=>handleChange(ev)} name="username" className="form-control" placeholder="Username" />
                                     </div>
                                     <div className="mb-2">
-                                        <input type="password" name="password" className="form-control" placeholder="Password" />
+                                        <input type="password" onChange={(ev)=>handleChange(ev)} name="password" className="form-control" placeholder="Password" />
                                     </div>
                                     <div className="mb-2">
                                         <input type="submit" className="btn btn-primary" value="Login" />
