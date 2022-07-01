@@ -6,6 +6,7 @@ import EmployeeClassComponent from './components/EmployeeClassComponent';
 import EmployeeComponent from './components/EmployeeFnComponent';
 import Greetings from './components/Greetings';
 import LoginForm from './components/LoginForm';
+import UserList from './components/UserList';
 
 function App() {
   return (
@@ -46,6 +47,11 @@ function App() {
           <div className="row">
             <div className="col">
               <Authentication />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <UserList />
             </div>
           </div>
         </div>
